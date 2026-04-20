@@ -1,0 +1,891 @@
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA temp.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA temp.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA temp.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA temp.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+PRAGMA temp.table_info("weatherparameter")
+[raw sql] ()
+
+CREATE TABLE admin (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	password VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE user (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	password VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE city (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	url VARCHAR, 
+	"adminId" INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("adminId") REFERENCES admin (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE usercity (
+	id INTEGER NOT NULL, 
+	"cityId" INTEGER, 
+	"userId" INTEGER, 
+	year VARCHAR, 
+	month VARCHAR, 
+	weather_params VARCHAR, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("cityId") REFERENCES city (id), 
+	FOREIGN KEY("userId") REFERENCES user (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE weatherparameter (
+	id INTEGER NOT NULL, 
+	year_month_param VARCHAR, 
+	"values" VARCHAR, 
+	"cityId" INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("cityId") REFERENCES city (id)
+)
+
+
+[no key 0.00003s] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on https://10.1.83.127:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00031s] ()
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on https://10.1.83.127:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00041s] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.01s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 20.02s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 30.02s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 40.03s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 50.04s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 60.05s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 70.06s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 80.07s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 90.07s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 100.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 110.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 120.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 130.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 140.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 150.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 160.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 170.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 180.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 190.2s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 200.2s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 210.2s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 220.2s ago] ()
+Inside ETL.
+Inside add_admin
+Received request:{'name': 'Admin1', 'password': 'Admin1'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00013s] ('Admin1', 1, 0)
+INSERT INTO admin (name, password) VALUES (?, ?)
+[generated in 0.00006s] ('Admin1', 'Admin1')
+COMMIT
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+[generated in 0.00005s] (1,)
+127.0.0.1 - - [20/Apr/2026 12:48:43] "POST /admin HTTP/1.1" 200 -
+Inside add_user
+Received request:{'name': 'User1', 'password': 'User1'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00008s] ('User1', 1, 0)
+INSERT INTO user (name, password) VALUES (?, ?)
+[generated in 0.00008s] ('User1', 'User1')
+COMMIT
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+[generated in 0.00006s] (1,)
+127.0.0.1 - - [20/Apr/2026 12:48:47] "POST /users HTTP/1.1" 200 -
+Inside add_user
+Received request:{'name': 'abc', 'password': 'abc'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.01226s ago] ('abc', 1, 0)
+INSERT INTO user (name, password) VALUES (?, ?)
+[cached since 0.01196s ago] ('abc', 'abc')
+COMMIT
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+[cached since 0.01131s ago] (2,)
+127.0.0.1 - - [20/Apr/2026 12:48:47] "POST /users HTTP/1.1" 200 -
+Inside add_city
+Received request:{'name': 'Austin', 'month': 'August', 'year': '2023', 'weather_params': 'TMAX,TMIN'}
+Exception on /admin/1/cities [POST]
+Traceback (most recent call last):
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/anushadudella/assignment5/application.py", line 458, in add_city
+    url = data['url']
+          ~~~~^^^^^^^
+KeyError: 'url'
+127.0.0.1 - - [20/Apr/2026 12:48:52] "[35m[1mPOST /admin/1/cities HTTP/1.1[0m" 500 -
+Inside add_city
+Received request:{'name': 'Dallas', 'month': 'July', 'year': '2023', 'weather_params': 'TMAX,TMIN,SNOW'}
+Exception on /admin/1/cities [POST]
+Traceback (most recent call last):
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/anushadudella/assignment5/application.py", line 458, in add_city
+    url = data['url']
+          ~~~~^^^^^^^
+KeyError: 'url'
+127.0.0.1 - - [20/Apr/2026 12:48:52] "[35m[1mPOST /admin/1/cities HTTP/1.1[0m" 500 -
+Inside add_city
+Received request:{'name': 'San Antonio', 'month': 'August', 'year': '2023', 'weather_params': 'TMAX,TMIN'}
+Exception on /admin/1/cities [POST]
+Traceback (most recent call last):
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 2070, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1515, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1513, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/Users/anushadudella/assignment5/venv/lib/python3.13/site-packages/flask/app.py", line 1499, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Users/anushadudella/assignment5/application.py", line 458, in add_city
+    url = data['url']
+          ~~~~^^^^^^^
+KeyError: 'url'
+127.0.0.1 - - [20/Apr/2026 12:48:52] "[35m[1mPOST /admin/1/cities HTTP/1.1[0m" 500 -
+Inside add_city
+Received request:{'name': 'Austin', 'url': 'https://api.weather.gov/gridpoints/EWX/155,90/forecast'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00008s] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00006s] ('Austin', 1, 0)
+INSERT INTO city (name, url, "adminId") VALUES (?, ?, ?)
+[generated in 0.00005s] ('Austin', 'https://api.weather.gov/gridpoints/EWX/155,90/forecast', 1)
+COMMIT
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+[generated in 0.00004s] (1,)
+127.0.0.1 - - [20/Apr/2026 12:49:31] "POST /admin/1/cities HTTP/1.1" 200 -
+Inside add_city
+Received request:{'name': 'Dallas', 'url': 'https://api.weather.gov/gridpoints/FWD/85,61/forecast'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.01206s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.01138s ago] ('Dallas', 1, 0)
+INSERT INTO city (name, url, "adminId") VALUES (?, ?, ?)
+[cached since 0.0112s ago] ('Dallas', 'https://api.weather.gov/gridpoints/FWD/85,61/forecast', 1)
+COMMIT
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+[cached since 0.01108s ago] (2,)
+127.0.0.1 - - [20/Apr/2026 12:49:31] "POST /admin/1/cities HTTP/1.1" 200 -
+Inside add_city
+Received request:{'name': 'San Antonio', 'url': 'https://api.weather.gov/gridpoints/EWX/119,71/forecast'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.02323s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.0225s ago] ('San Antonio', 1, 0)
+INSERT INTO city (name, url, "adminId") VALUES (?, ?, ?)
+[cached since 0.02228s ago] ('San Antonio', 'https://api.weather.gov/gridpoints/EWX/119,71/forecast', 1)
+COMMIT
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+[cached since 0.02233s ago] (3,)
+127.0.0.1 - - [20/Apr/2026 12:49:31] "POST /admin/1/cities HTTP/1.1" 200 -
+Inside add_user_city
+Received request:{'name': 'Austin', 'month': 'August', 'year': '2023', 'weather_params': 'TMAX,TMIN'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00007s] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 25.26s ago] ('Austin', 1, 0)
+INSERT INTO usercity ("cityId", "userId", year, month, weather_params) VALUES (?, ?, ?, ?, ?)
+[generated in 0.00005s] (1, 1, '2023', 'August', 'TMAX,TMIN')
+COMMIT
+BEGIN (implicit)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity.id = ?
+[generated in 0.00006s] (1,)
+127.0.0.1 - - [20/Apr/2026 12:49:57] "POST /users/1/cities HTTP/1.1" 200 -
+Inside add_user_city
+Received request:{'name': 'Dallas', 'month': 'July', 'year': '2023', 'weather_params': 'TMAX,TMIN,SNOW'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.01197s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 25.27s ago] ('Dallas', 1, 0)
+INSERT INTO usercity ("cityId", "userId", year, month, weather_params) VALUES (?, ?, ?, ?, ?)
+[cached since 0.01172s ago] (2, 1, '2023', 'July', 'TMAX,TMIN,SNOW')
+COMMIT
+BEGIN (implicit)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity.id = ?
+[cached since 0.01118s ago] (2,)
+127.0.0.1 - - [20/Apr/2026 12:49:57] "POST /users/1/cities HTTP/1.1" 200 -
+Inside add_user_city
+Received request:{'name': 'San Antonio', 'month': 'August', 'year': '2023', 'weather_params': 'TMAX,TMIN'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.02342s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 25.28s ago] ('San Antonio', 1, 0)
+INSERT INTO usercity ("cityId", "userId", year, month, weather_params) VALUES (?, ?, ?, ?, ?)
+[cached since 0.02323s ago] (3, 1, '2023', 'August', 'TMAX,TMIN')
+COMMIT
+BEGIN (implicit)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity.id = ?
+[cached since 0.02324s ago] (3,)
+127.0.0.1 - - [20/Apr/2026 12:49:57] "POST /users/1/cities HTTP/1.1" 200 -
+127.0.0.1 - - [20/Apr/2026 12:50:17] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [20/Apr/2026 12:50:17] "GET /static/images/longhorn.png HTTP/1.1" 200 -
+127.0.0.1 - - [20/Apr/2026 12:50:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+Username:User1
+Password:User1
+BEGIN (implicit)
+SELECT count(*) AS count_1 
+FROM (SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?) AS anon_1
+[generated in 0.00022s] ('User1',)
+TODO: Verify the user and password.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00015s] ()
+SELECT count(*) AS count_1 
+FROM (SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?) AS anon_1
+[cached since 0.002812s ago] ('User1',)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?
+[cached since 98.4s ago] ('User1', 1, 0)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity."userId" = ?
+[generated in 0.00011s] (1,)
+SELECT count(*) AS count_1 
+FROM (SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?) AS anon_1
+[generated in 0.00015s] (1,)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00015s] (1, 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?) AS anon_1
+[cached since 0.002148s ago] (2,)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.00165s ago] (2, 1, 0)
+SELECT count(*) AS count_1 
+FROM (SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?) AS anon_1
+[cached since 0.002998s ago] (3,)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.002455s ago] (3, 1, 0)
+127.0.0.1 - - [20/Apr/2026 12:50:26] "POST /login HTTP/1.1" 200 -
+127.0.0.1 - - [20/Apr/2026 12:50:26] "[36mGET /static/images/longhorn.png HTTP/1.1[0m" 304 -
+127.0.0.1 - - [20/Apr/2026 12:50:26] "GET /static/scripts/inputhandler.js HTTP/1.1" 200 -
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA temp.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA temp.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA temp.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA temp.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+PRAGMA temp.table_info("weatherparameter")
+[raw sql] ()
+
+CREATE TABLE admin (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	password VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE user (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	password VARCHAR, 
+	PRIMARY KEY (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE city (
+	id INTEGER NOT NULL, 
+	name VARCHAR, 
+	url VARCHAR, 
+	"adminId" INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("adminId") REFERENCES admin (id)
+)
+
+
+[no key 0.00005s] ()
+
+CREATE TABLE usercity (
+	id INTEGER NOT NULL, 
+	"cityId" INTEGER, 
+	"userId" INTEGER, 
+	year VARCHAR, 
+	month VARCHAR, 
+	weather_params VARCHAR, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("cityId") REFERENCES city (id), 
+	FOREIGN KEY("userId") REFERENCES user (id)
+)
+
+
+[no key 0.00003s] ()
+
+CREATE TABLE weatherparameter (
+	id INTEGER NOT NULL, 
+	year_month_param VARCHAR, 
+	"values" VARCHAR, 
+	"cityId" INTEGER, 
+	PRIMARY KEY (id), 
+	FOREIGN KEY("cityId") REFERENCES city (id)
+)
+
+
+[no key 0.00003s] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on https://10.1.83.127:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00025s] ()
+Inside add_admin
+Received request:{'name': 'Admin1', 'password': 'Admin1'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00010s] ('Admin1', 1, 0)
+INSERT INTO admin (name, password) VALUES (?, ?)
+[generated in 0.00016s] ('Admin1', '$2b$12$8MXFOXn3VSC8jEmMrqfC2eNqCFZbEy1AMpHdLY8mFp9WNJ0gqCdHG')
+COMMIT
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+[generated in 0.00006s] (1,)
+127.0.0.1 - - [20/Apr/2026 13:08:01] "POST /admin HTTP/1.1" 200 -
+Inside add_user
+Received request:{'name': 'User1', 'password': 'User1'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00009s] ('User1', 1, 0)
+INSERT INTO user (name, password) VALUES (?, ?)
+[generated in 0.00006s] ('User1', '$2b$12$MvyCqElwIRlWGAZH7VSVLepuJkghfeT3YjUdWQnCH0McpikB8T7iG')
+COMMIT
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+[generated in 0.00005s] (1,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /users HTTP/1.1" 200 -
+Inside add_user
+Received request:{'name': 'abc', 'password': 'abc'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.2144s ago] ('abc', 1, 0)
+INSERT INTO user (name, password) VALUES (?, ?)
+[cached since 0.2142s ago] ('abc', '$2b$12$BoZLLzitvd3KRiR.G0AWhOFdEhiC9LirxTLvZ34W3pE0qXREVdRpC')
+COMMIT
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+[cached since 0.2138s ago] (2,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /users HTTP/1.1" 200 -
+Inside add_city
+Received request:{'name': 'Austin', 'url': 'https://api.weather.gov/gridpoints/EWX/155,90/forecast'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00008s] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00006s] ('Austin', 1, 0)
+INSERT INTO city (name, url, "adminId") VALUES (?, ?, ?)
+[generated in 0.00005s] ('Austin', 'https://api.weather.gov/gridpoints/EWX/155,90/forecast', 1)
+COMMIT
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+[generated in 0.00005s] (1,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /admin/1/cities HTTP/1.1" 200 -
+Inside add_city
+Received request:{'name': 'Dallas', 'url': 'https://api.weather.gov/gridpoints/FWD/85,61/forecast'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.01283s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.01255s ago] ('Dallas', 1, 0)
+INSERT INTO city (name, url, "adminId") VALUES (?, ?, ?)
+[cached since 0.01216s ago] ('Dallas', 'https://api.weather.gov/gridpoints/FWD/85,61/forecast', 1)
+COMMIT
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+[cached since 0.01207s ago] (2,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /admin/1/cities HTTP/1.1" 200 -
+Inside add_city
+Received request:{'name': 'San Antonio', 'url': 'https://api.weather.gov/gridpoints/EWX/119,71/forecast'}
+BEGIN (implicit)
+SELECT admin.id AS admin_id, admin.name AS admin_name, admin.password AS admin_password 
+FROM admin 
+WHERE admin.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.02416s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.02376s ago] ('San Antonio', 1, 0)
+INSERT INTO city (name, url, "adminId") VALUES (?, ?, ?)
+[cached since 0.02333s ago] ('San Antonio', 'https://api.weather.gov/gridpoints/EWX/119,71/forecast', 1)
+COMMIT
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.id = ?
+[cached since 0.02315s ago] (3,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /admin/1/cities HTTP/1.1" 200 -
+Inside add_user_city
+Received request:{'name': 'Austin', 'month': 'August', 'year': '2023', 'weather_params': 'TMAX,TMIN'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00006s] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.03558s ago] ('Austin', 1, 0)
+INSERT INTO usercity ("cityId", "userId", year, month, weather_params) VALUES (?, ?, ?, ?, ?)
+[generated in 0.00008s] (1, 1, '2023', 'August', 'TMAX,TMIN')
+COMMIT
+BEGIN (implicit)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity.id = ?
+[generated in 0.00007s] (1,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /users/1/cities HTTP/1.1" 200 -
+Inside add_user_city
+Received request:{'name': 'Dallas', 'month': 'July', 'year': '2023', 'weather_params': 'TMAX,TMIN,SNOW'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.01252s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.04805s ago] ('Dallas', 1, 0)
+INSERT INTO usercity ("cityId", "userId", year, month, weather_params) VALUES (?, ?, ?, ?, ?)
+[cached since 0.01223s ago] (2, 1, '2023', 'July', 'TMAX,TMIN,SNOW')
+COMMIT
+BEGIN (implicit)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity.id = ?
+[cached since 0.01159s ago] (2,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /users/1/cities HTTP/1.1" 200 -
+Inside add_user_city
+Received request:{'name': 'San Antonio', 'month': 'August', 'year': '2023', 'weather_params': 'TMAX,TMIN'}
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.id = ?
+ LIMIT ? OFFSET ?
+[cached since 0.02413s ago] ('1', 1, 0)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city 
+WHERE city.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.05963s ago] ('San Antonio', 1, 0)
+INSERT INTO usercity ("cityId", "userId", year, month, weather_params) VALUES (?, ?, ?, ?, ?)
+[cached since 0.02379s ago] (3, 1, '2023', 'August', 'TMAX,TMIN')
+COMMIT
+BEGIN (implicit)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity.id = ?
+[cached since 0.02313s ago] (3,)
+127.0.0.1 - - [20/Apr/2026 13:08:02] "POST /users/1/cities HTTP/1.1" 200 -
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 10.01s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 81.49s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 92.62s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 102.9s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 113.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 123.4s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 133.6s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 143.9s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 154.1s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 164.4s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 174.6s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 184.8s ago] ()

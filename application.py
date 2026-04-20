@@ -117,7 +117,8 @@ class Admin(Base):
     def as_dict(self):
         fields = {}
         for c in self.__table__.columns:
-            fields[c.name] = getattr(self, c.name)
+            if c.name != 'password':
+                fields[c.name] = getattr(self, c.name)
         return fields
 
 
@@ -135,7 +136,8 @@ class User(Base):
     def as_dict(self):
         fields = {}
         for c in self.__table__.columns:
-            fields[c.name] = getattr(self, c.name)
+            if c.name != 'password':
+                fields[c.name] = getattr(self, c.name)
         return fields
 
 
@@ -154,7 +156,8 @@ class City(Base):
     def as_dict(self):
         fields = {}
         for c in self.__table__.columns:
-            fields[c.name] = getattr(self, c.name)
+            if c.name != 'password':
+                fields[c.name] = getattr(self, c.name)
         return fields
 
 
@@ -321,7 +324,8 @@ def add_admin():
         return Response(status, status=400)
     else:
         # 3. Assignment 5: Use bcrypt to encrypt the password.
-        admin = Admin(name=name, password=password)
+        hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+        admin = Admin(name=name, password=hashed.decode('utf-8'))
         session.add(admin)
         session.commit()
 
@@ -387,7 +391,8 @@ def add_user():
     password = data['password']
 
     # 4. Assignment 5: Use bcrypt to encrypt the password.
-    newuser = User(name=name, password=password)
+    hashed = bcrypt.hashpw(password.encode('utf-8'), bcrypt.gensalt())
+    newuser = User(name=name, password=hashed.decode('utf-8'))
 
     session = DBSession()
     user = session.query(User).filter_by(name=name).first()
@@ -794,6 +799,7 @@ def registercity():
 # 5. Assignment 5: 
 # - Connect the "login-using-google" form with this method
 # - For http methods list in the definition, use POST and GET
+@app.route('/authorize', methods=['POST', 'GET'])
 def authorize():
   if not os.path.exists(CLIENT_SECRETS_FILE):
       return render_template('google-oauth-client-secrets-file-missing.html')
@@ -901,7 +907,10 @@ def login():
             # - Check that <username, password> exists in the database
             # - Note that password will be encrypted in the DB.
             # - You will have to use bcrypt's checkpw method to check the password.
-            app.logger.info("TODO: Verify the user and password.")
+            
+            user = users.first()
+            if not bcrypt.checkpw(password.encode('utf-8'), user.password.encode('utf-8')):
+                return render_template('not-found.html', user=username)
 
     # Load credentials from the session.
     if 'credentials' in flask.session:
@@ -915,6 +924,12 @@ def login():
         # Assignment 5: 
         # - Insert User in the DB
         # - Leave password empty
+        dbsession = DBSession()
+        existing = dbsession.query(User).filter_by(name=user_email).first()
+        if existing is None:
+            new_oauth_user = User(name=user_email, password=' ')
+            dbsession.add(new_oauth_user)
+            dbsession.commit()
 
         flask.session['credentials'] = credentials_to_dict(credentials)
 
