@@ -889,3 +889,103 @@ BEGIN (implicit)
 SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
 FROM city
 [cached since 184.8s ago] ()
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+Portal started...
+ * Running on all addresses.
+   WARNING: This is a development server. Do not use it in a production deployment.
+ * Running on https://10.1.83.127:5009/ (Press CTRL+C to quit)
+BEGIN (implicit)
+PRAGMA main.table_info("admin")
+[raw sql] ()
+PRAGMA main.table_info("user")
+[raw sql] ()
+PRAGMA main.table_info("city")
+[raw sql] ()
+PRAGMA main.table_info("usercity")
+[raw sql] ()
+PRAGMA main.table_info("weatherparameter")
+[raw sql] ()
+COMMIT
+127.0.0.1 - - [21/Apr/2026 00:52:20] "GET / HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 00:52:20] "GET /static/images/longhorn.png HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 00:52:21] "[32mPOST /authorize HTTP/1.1[0m" 302 -
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00028s] ()
+127.0.0.1 - - [21/Apr/2026 00:52:25] "[32mGET /oauth2callback?state=jNdtyY685YLi9gxM4ULToQRpYqmWYA&iss=https%3A%2F%2Faccounts.google.com&code=4%2F0Aci98E-ngCE9DVUSz3rUSFGFtGMVtsCmgjbQvxLbh1zdoGwH5LA1GHSasVxFDDeurWAyLQ&scope=email+https%3A%2F%2Fwww.googleapis.com%2Fauth%2Fuserinfo.email+openid&authuser=1&prompt=consent HTTP/1.1[0m" 302 -
+Username:
+Password:
+file_cache is only supported with oauth2client<4.0.0
+BEGIN (implicit)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?
+[generated in 0.00012s] ('anusharao4262@gmail.com', 1, 0)
+INSERT INTO user (name, password) VALUES (?, ?)
+[generated in 0.00007s] ('anusharao4262@gmail.com', ' ')
+COMMIT
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[generated in 0.00006s] ()
+SELECT count(*) AS count_1 
+FROM (SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?) AS anon_1
+[generated in 0.00007s] ('anusharao4262@gmail.com',)
+SELECT user.id AS user_id, user.name AS user_name, user.password AS user_password 
+FROM user 
+WHERE user.name = ?
+ LIMIT ? OFFSET ?
+[cached since 0.005716s ago] ('anusharao4262@gmail.com', 1, 0)
+SELECT usercity.id AS usercity_id, usercity."cityId" AS "usercity_cityId", usercity."userId" AS "usercity_userId", usercity.year AS usercity_year, usercity.month AS usercity_month, usercity.weather_params AS usercity_weather_params 
+FROM usercity 
+WHERE usercity."userId" = ?
+[generated in 0.00005s] (3,)
+127.0.0.1 - - [21/Apr/2026 00:52:25] "GET /login HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 00:52:25] "GET /static/images/longhorn.png HTTP/1.1" 200 -
+127.0.0.1 - - [21/Apr/2026 00:52:25] "GET /static/scripts/inputhandler.js HTTP/1.1" 200 -
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 12.65s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 22.91s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 33.15s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 43.4s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 53.63s ago] ()
+Inside ETL.
+BEGIN (implicit)
+SELECT city.id AS city_id, city.name AS city_name, city.url AS city_url, city."adminId" AS "city_adminId" 
+FROM city
+[cached since 63.86s ago] ()
